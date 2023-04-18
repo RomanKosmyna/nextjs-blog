@@ -8,7 +8,7 @@ export async function getStaticProps() {
     const allPostsData = getSortedPostsData();
     const res = await fetch("http://localhost:3000/api/hello")
     const data = await res.json();
-    // test
+
     return {
         props: {
             allPostsData,
@@ -18,7 +18,7 @@ export async function getStaticProps() {
 }
 
 export default function Home({allPostsData, data}) {
-    console.log(data)
+
     return (
         <Layout home>
             <Head>
