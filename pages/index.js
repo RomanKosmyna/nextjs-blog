@@ -6,18 +6,15 @@ import Link from "next/link";
 
 export async function getStaticProps() {
     const allPostsData = getSortedPostsData();
-    const res = await fetch("http://localhost:3000/api/hello")
-    const data = await res.json();
 
     return {
         props: {
             allPostsData,
-            data,
         }
     };
 }
 
-export default function Home({allPostsData, data}) {
+export default function Home({allPostsData}) {
 
     return (
         <Layout home>
